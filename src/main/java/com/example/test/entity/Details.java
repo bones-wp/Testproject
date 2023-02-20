@@ -7,13 +7,13 @@ import lombok.Data;
 @AllArgsConstructor
 @Data
 @Embeddable
-public class Contacts {
+public class Details {
 
     private String name;
     private String surname;
     private String phone;
     private String email;
 
-    public Contacts() {
+    public Details() {
     }
 }

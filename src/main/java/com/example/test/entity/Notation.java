@@ -1,5 +1,6 @@
 package com.example.test.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -13,18 +14,26 @@ import lombok.Data;
 import java.util.Calendar;
 
 @Entity
-@Table(name = "RECORDS")
+@Table(name = "NOTATION")
 @AllArgsConstructor
 @Data
 
-public class Record {
+public class Notation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "Time")
     private Calendar calendar;
 
-    public Record() {
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Producer producer;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Customer customer;
+
+
+    public Notation() {
 
     }
 }

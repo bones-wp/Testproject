@@ -8,21 +8,19 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.util.List;
-import java.util.Map;
 
 @Entity
-@Table(name = "MASTERS")
+@Table(name = "PRODUCER")
 @Data
 @AllArgsConstructor
 
-public class Master {
-    public Master() {
+public class Producer {
+    public Producer() {
     }
 
     @Id
@@ -30,18 +28,22 @@ public class Master {
     private Long id;
 
     @Embedded
-    private Contacts contacts;
+    private Details details;
 
     @Embedded
     private SocialNetwork socialNetworks;
 
     @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL)
-    @JoinColumn(name = "master_id")
-    private List<LashesPrice> lashesPrice;
+    @JoinColumn(name = "producer_id")
+    private List<LashesPrice> lashesPrices;
 
     @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL)
-    @JoinColumn(name = "master_id")
-    private List<Record> schedule;
+    @JoinColumn(name = "producer_id")
+    private List<Notation> schedule;
+
+    @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL)
+    @JoinColumn(name = "producer_id")
+    private List<Feedback> feedbacks;
 
     private Double avRate;
 

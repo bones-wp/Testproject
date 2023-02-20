@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/tracking_travel_db
+    url: jdbc:postgresql://localhost:5432/lashes_db
     username: postgres
     password: root
   jpa:
@@ -12,13 +12,6 @@ spring:
     properties:
       hibernate.jdbc.lob.non_contextual_creation: true
 
-  servlet:
-    multipart:
-      max-file-size: 15MB
-      max-request-size: 15MB
-
-storage:
-  location: ./uploads
 
 logging:
   file:
@@ -27,4 +20,4 @@ logging:
 server:
   servlet:
     context-path: "/"
-  #port: 8099
+  port: 8098
