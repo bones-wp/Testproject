@@ -35,5 +35,6 @@ public class Service {
     private Double price;
 
     public Service() {
+
     }
 }

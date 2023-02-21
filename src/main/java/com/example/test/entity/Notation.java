@@ -27,8 +27,6 @@ public class Notation {
     @OneToOne
     private ServiceType serviceType;
 
-    private Double serviseCost;
-
     @Column(name = "Time")
     private Calendar calendar;
 
