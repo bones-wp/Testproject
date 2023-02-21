@@ -20,9 +20,6 @@ import java.util.List;
 @AllArgsConstructor
 
 public class Producer {
-    public Producer() {
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -35,7 +32,7 @@ public class Producer {
 
     @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL)
     @JoinColumn(name = "producer_id")
-    private List<LashesPrice> lashesPrices;
+    private List<Service> services;
 
     @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL)
     @JoinColumn(name = "producer_id")
@@ -47,4 +44,6 @@ public class Producer {
 
     private Double avRate;
 
+    public Producer() {
+    }
 }

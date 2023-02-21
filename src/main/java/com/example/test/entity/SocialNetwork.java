@@ -11,7 +11,7 @@ import java.util.List;
 @Embeddable
 public class SocialNetwork {
 
-    private List<String> networks;
+    private List<String> socialNetworks;
 
     public SocialNetwork() {
     }
