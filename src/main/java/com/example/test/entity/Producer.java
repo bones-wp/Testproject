@@ -1,14 +1,16 @@
 package com.example.test.entity;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Embedded;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -27,8 +29,9 @@ public class Producer {
     @Embedded
     private Details details;
 
-    @Embedded
-    private SocialNetwork socialNetworks;
+    @Column
+    @ElementCollection
+    private List<String> socialNetworks;
 
     @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL)
     @JoinColumn(name = "producer_id")
@@ -36,7 +39,7 @@ public class Producer {
 
     @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL)
     @JoinColumn(name = "producer_id")
-    private List<Notation> schedule;
+    private List<Notation> notations;
 
     @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL)
     @JoinColumn(name = "producer_id")

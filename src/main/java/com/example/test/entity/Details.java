@@ -1,7 +1,7 @@
 package com.example.test.entity;
 
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.Transient;
+import javax.persistence.Embeddable;
+import javax.persistence.Transient;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
