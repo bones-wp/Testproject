@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/lashes_db
+    url: postgresql://postgres:Jf9KxU5vKHlVdMgo460U@containers-us-west-35.railway.app:8066/railway
     username: postgres
-    password: root
+    password: Jf9KxU5vKHlVdMgo460U
   jpa:
     #выводит тела запросов к БД в консоль
     show-sql: true
