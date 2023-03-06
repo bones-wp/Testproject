@@ -57,7 +57,7 @@ public class SecurityConfig {
         return new NimbusJwtEncoder(jwks);
     }
 
-    public static final String[] PUBLIC_PATHS = {"/register", "/docs/**", "/v3/api-docs.yaml",
+    public static final String[] PUBLIC_PATHS = {"/token", "/register", "/docs/**", "/v3/api-docs.yaml",
             "/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html"};
 
     @Bean
@@ -70,28 +70,7 @@ public class SecurityConfig {
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
-                .exceptionHandling(
-                        (ex) -> ex.authenticationEntryPoint(new BearerTokenAuthenticationEntryPoint())
-                                .accessDeniedHandler(new BearerTokenAccessDeniedHandler()))
-                .build();
-    }
-
-    @Order(Ordered.HIGHEST_PRECEDENCE)
-    @Bean
-    SecurityFilterChain tokenSecurityFilterChain(HttpSecurity http) throws Exception {
-        return http
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(new AntPathRequestMatcher("/token")).permitAll()
-                        .anyRequest().authenticated()
-                )
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .csrf(AbstractHttpConfigurer::disable)
-                .exceptionHandling(ex -> {
-                    ex.authenticationEntryPoint(new BearerTokenAuthenticationEntryPoint());
-                    ex.accessDeniedHandler(new BearerTokenAccessDeniedHandler());
-                })
                 .httpBasic(withDefaults())
                 .build();
     }
-
 }
