@@ -1,12 +1,12 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://containers-us-west-35.railway.app:6115/railway
+#    url: jdbc:postgresql://containers-us-west-35.railway.app:6115/railway
+#    username: postgres
+#    password: JuMd9NiyJKLzqY2qWFzI
+    url: jdbc:postgresql://localhost:5432/lashes_db
     username: postgres
-    password: JuMd9NiyJKLzqY2qWFzI
-    #    url: jdbc:postgresql://localhost:5432/lashes_db
-    #    username: postgres
-    #    password: root
+    password: root
 
   jpa:
     #выводит тела запросов к БД в консоль
@@ -15,14 +15,12 @@ spring:
     hibernate.ddl-auto: update
     properties:
       hibernate.jdbc.lob.non_contextual_creation: true
-    open-in-view: false
 
-#  security:
-#    oauth2:
-#      resourceserver:
-#        jwt:
-#          issuer-uri: https://idp.example.com
-#          jwk-set-uri: https://idp.example.com/.well-known/jwks.json
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /docs
 
 rsa:
   private-key:
