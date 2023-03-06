@@ -1,12 +1,12 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-#    url: jdbc:postgresql://containers-us-west-35.railway.app:6115/railway
-#    username: postgres
-#    password: JuMd9NiyJKLzqY2qWFzI
-    url: jdbc:postgresql://localhost:5432/lashes_db
+    url: jdbc:postgresql://containers-us-west-35.railway.app:6115/railway
     username: postgres
-    password: root
+    password: JuMd9NiyJKLzqY2qWFzI
+#    url: jdbc:postgresql://localhost:5432/lashes_db
+#    username: postgres
+#    password: root
 
   jpa:
     #выводит тела запросов к БД в консоль
