@@ -34,9 +34,8 @@ public class SwaggerConfig {
                         .title("Lashes")
                         .version("1.0.0")
                         .contact(new Contact()
-                                .email("Osmolovskiy.Yuriy@ya.ru")
-                                .url("https://github.com/bones-wp")
-                                .name("Osmolovkiy Yuriy")
+                                .url("https://github.com/intensiveproject/nogotochki")
+                                .name("Team Sunrise")
                         )
                 );
     }
