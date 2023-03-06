@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://containers-us-west-35.railway.app:6115/railway
+    url: jdbc:postgresql://containers-us-west-196.railway.app:7173/railway
     username: postgres
-    password: JuMd9NiyJKLzqY2qWFzI
+    password: 8eBZOGVOITz2cgJp4T54
 #    url: jdbc:postgresql://localhost:5432/lashes_db
 #    username: postgres
 #    password: root
