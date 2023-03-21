@@ -11,6 +11,7 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.util.Comparator;
 import java.util.List;
 
 @Entity
@@ -18,7 +19,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 
-public class Customer {
+public class Customer extends Details{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
